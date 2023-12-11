@@ -1,6 +1,8 @@
 {
   "name": "common_components",
   "version": "0.1.0",
+  "author": "RisinMercer",
+  "main": "index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -18,17 +20,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006 -s public",
     "build-storybook": "storybook build -s public"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:storybook/recommended"
-    ]
   },
   "browserslist": {
     "production": [
@@ -42,7 +35,12 @@
       "last 1 safari version"
     ]
   },
+  "peerDependencies": {
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@storybook/addon-essentials": "^7.5.2",
     "@storybook/addon-interactions": "^7.5.2",
     "@storybook/addon-links": "^7.5.2",
