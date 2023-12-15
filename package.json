@@ -1,9 +1,18 @@
 {
-  "name": "common_components",
-  "version": "0.1.0",
+  "name": "@risinmercer/common_components",
+  "version": "0.0.3",
   "author": "RisinMercer",
-  "main": "index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.0",
+    "@mui/material": "^5.15.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -19,9 +28,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run rollup-build-lib",
     "storybook": "storybook dev -p 6006 -s public",
-    "build-storybook": "storybook build -s public"
+    "build-storybook": "storybook build -s public",
+    "rollup-build-lib": "rollup -c"
   },
   "browserslist": {
     "production": [
@@ -36,11 +46,15 @@
     ]
   },
   "peerDependencies": {
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
     "@storybook/addon-essentials": "^7.5.2",
     "@storybook/addon-interactions": "^7.5.2",
     "@storybook/addon-links": "^7.5.2",
@@ -53,7 +67,12 @@
     "babel-plugin-named-exports-order": "^0.0.2",
     "eslint-plugin-storybook": "^0.6.15",
     "prop-types": "^15.8.1",
+    "rollup": "^4.8.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-sourcemaps": "^0.6.3",
     "storybook": "^7.5.2",
+    "tslib": "^2.6.2",
     "webpack": "^5.89.0"
   }
 }

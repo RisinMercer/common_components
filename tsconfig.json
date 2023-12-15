@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
+    "target": "es2016",
     "module": "esnext",
     "importHelpers": true,
     "declaration": true,
     "sourceMap": true,
     "rootDir": "./src",
-    "outDir": "./dist/esm",
+    "outDir": "dist",
+    "declarationDir": "types",
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -21,7 +23,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "src",
+    "paths": {
+      "components/*": ["components/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["dist", "node_modules"]
